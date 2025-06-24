@@ -57,7 +57,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Invoices</h3>
+                            <h3 class="card-title">Tabla de Stock</h3>
                         </div>
                         <div class="card-body border-bottom py-3">
                             <div class="d-flex">
@@ -80,305 +80,52 @@
                         </div>
                         <div class="table-responsive">
                             <table class="table card-table table-vcenter text-nowrap datatable">
-                                <thead>
+                            {{-- Solo reemplaza el contenido de la tabla --}}
+                            <thead>
                                 <tr>
-                                    <th class="w-1"><input class="form-check-input m-0 align-middle" type="checkbox"
-                                                           aria-label="Select all invoices"></th>
-                                    <th class="w-1">No.
-                                        <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             class="icon icon-sm text-dark icon-thick" width="24" height="24"
-                                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                             stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                            <polyline points="6 15 12 9 18 15"/>
-                                        </svg>
-                                    </th>
-                                    <th>Invoice Subject</th>
-                                    <th>Client</th>
-                                    <th>VAT No.</th>
-                                    <th>Created</th>
-                                    <th>Status</th>
-                                    <th>Price</th>
-                                    <th></th>
+                                    <th>#</th>
+                                    <th>Producto</th>
+                                    <th>Código</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Estado</th>
+                                    <th>Actions</th>
                                 </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                               aria-label="Select invoice"></td>
-                                    <td><span class="text-muted">001401</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Design Works</a></td>
-                                    <td>
-                                        <span class="flag flag-country-us"></span>
-                                        Carlson Limited
-                                    </td>
-                                    <td>
-                                        87956621
-                                    </td>
-                                    <td>
-                                        15 Dec 2017
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-success me-1"></span> Paid
-                                    </td>
-                                    <td>$887</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                               aria-label="Select invoice"></td>
-                                    <td><span class="text-muted">001402</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">UX Wireframes</a></td>
-                                    <td>
-                                        <span class="flag flag-country-gb"></span>
-                                        Adobe
-                                    </td>
-                                    <td>
-                                        87956421
-                                    </td>
-                                    <td>
-                                        12 Apr 2017
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-warning me-1"></span> Pending
-                                    </td>
-                                    <td>$1200</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                               aria-label="Select invoice"></td>
-                                    <td><span class="text-muted">001403</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">New Dashboard</a></td>
-                                    <td>
-                                        <span class="flag flag-country-de"></span>
-                                        Bluewolf
-                                    </td>
-                                    <td>
-                                        87952621
-                                    </td>
-                                    <td>
-                                        23 Oct 2017
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-warning me-1"></span> Pending
-                                    </td>
-                                    <td>$534</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                               aria-label="Select invoice"></td>
-                                    <td><span class="text-muted">001404</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Landing Page</a></td>
-                                    <td>
-                                        <span class="flag flag-country-br"></span>
-                                        Salesforce
-                                    </td>
-                                    <td>
-                                        87953421
-                                    </td>
-                                    <td>
-                                        2 Sep 2017
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-secondary me-1"></span> Due in 2 Weeks
-                                    </td>
-                                    <td>$1500</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                               aria-label="Select invoice"></td>
-                                    <td><span class="text-muted">001405</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Marketing Templates</a>
-                                    </td>
-                                    <td>
-                                        <span class="flag flag-country-pl"></span>
-                                        Printic
-                                    </td>
-                                    <td>
-                                        87956621
-                                    </td>
-                                    <td>
-                                        29 Jan 2018
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-danger me-1"></span> Paid Today
-                                    </td>
-                                    <td>$648</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                               aria-label="Select invoice"></td>
-                                    <td><span class="text-muted">001406</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Sales Presentation</a>
-                                    </td>
-                                    <td>
-                                        <span class="flag flag-country-br"></span>
-                                        Tabdaq
-                                    </td>
-                                    <td>
-                                        87956621
-                                    </td>
-                                    <td>
-                                        4 Feb 2018
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-secondary me-1"></span> Due in 3 Weeks
-                                    </td>
-                                    <td>$300</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                               aria-label="Select invoice"></td>
-                                    <td><span class="text-muted">001407</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Logo & Print</a></td>
-                                    <td>
-                                        <span class="flag flag-country-us"></span>
-                                        Apple
-                                    </td>
-                                    <td>
-                                        87956621
-                                    </td>
-                                    <td>
-                                        22 Mar 2018
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-success me-1"></span> Paid Today
-                                    </td>
-                                    <td>$2500</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                               aria-label="Select invoice"></td>
-                                    <td><span class="text-muted">001408</span></td>
-                                    <td><a href="invoice.html" class="text-reset" tabindex="-1">Icons</a></td>
-                                    <td>
-                                        <span class="flag flag-country-pl"></span>
-                                        Tookapic
-                                    </td>
-                                    <td>
-                                        87956621
-                                    </td>
-                                    <td>
-                                        13 May 2018
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-success me-1"></span> Paid Today
-                                    </td>
-                                    <td>$940</td>
-                                    <td class="text-end">
-                            <span class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                      data-bs-toggle="dropdown">Actions</button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </span>
-                                    </td>
-                                </tr>
-                                </tbody>
+                            </thead>
+                            <tbody>
+                                @foreach($inventarios as $i => $inv)
+                                    <tr>
+                                        <td>{{ $i + 1 }}</td>
+                                        <td>{{ $inv->producto->nombre }}</td>
+                                        <td>{{ $inv->producto->codigo }}</td>     
+                                        <td>${{ number_format($inv->producto->precio, 2) }}</td>
+                                        <td>{{ $inv->stock }}</td>
+                                        <td>
+                                            @if($inv->stock == 0)
+                                                <span style="color: red;">●</span> Agotado
+                                            @elseif($inv->stock <= 5)
+                                                <span style="color: orange;">●</span> Bajo
+                                            @else
+                                                <span style="color: green;">●</span> Disponible
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                    Actions
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="{{ route('entradas.create', ['producto_id' => $inv->producto_id]) }}" class="dropdown-item">
+                                                            Agregar Entrada
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                             </table>
                         </div>
                         <div class="card-footer d-flex align-items-center">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Entrada;
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use App\Models\Inventario;
 /**
  * Class EntradaController
  * @package App\Http\Controllers
@@ -56,12 +57,19 @@ class EntradaController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Entrada::$rules);
+        // Validar y guardar la entrada
+        $entrada = new Entrada();
+        $entrada->producto_id = $request->producto_id;
+        $entrada->cantidad = $request->cantidad;
+        $entrada->save();
 
-        $entrada = Entrada::create($request->all());
+        // Actualizar el stock en inventario
+        $inventario = Inventario::where('producto_id', $request->producto_id)->first();
+        if ($inventario) {
+            $inventario->registrarEntrada($request->cantidad);
+        }
 
-        return redirect()->route('entradas.index')
-            ->with('success', 'Entrada created successfully.');
+        return redirect()->back()->with('success', 'Entrada registrada y stock actualizado');
     }
 
     /**

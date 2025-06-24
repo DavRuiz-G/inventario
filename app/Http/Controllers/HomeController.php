@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Inventario;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // Obtener inventarios con relación a producto, ordenados por stock ascendente
+        $inventarios = Inventario::with('producto')->orderBy('stock', 'asc')->get();
+
+        return view('home', compact('inventarios'));
     }
 }

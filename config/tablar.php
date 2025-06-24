@@ -149,12 +149,12 @@ return [
             'icon' => 'ti ti-home',
             'url' => 'home'
         ],
-        [
+/*         [
             'text' => 'Products',
             'url' => 'products',
             'icon' => 'ti ti-article',
             'active' => ['products'],
-        ],
+        ], */
         [
             'text' => 'Productos',
             'url' => 'productos',

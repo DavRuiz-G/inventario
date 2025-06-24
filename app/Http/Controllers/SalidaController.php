@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\salida;
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use App\Models\Inventario;
 /**
  * Class EntradaController
  * @package App\Http\Controllers
@@ -55,12 +56,31 @@ class SalidaController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Salida::$rules);
+        // Validar datos de entrada
+        $request->validate([
+            'producto_id' => 'required|exists:productos,id',
+            'cantidad' => 'required|integer|min:1',
+        ]);
 
-        $entrada = Salida::create($request->all());
+        // Buscar el inventario del producto
+        $inventario = \App\Models\Inventario::where('producto_id', $request->producto_id)->first();
 
-        return redirect()->route('salidas.index')
-            ->with('success', 'Salida created successfully.');
+        // Verificar si hay suficiente stock
+        if ($inventario->stock < $request->cantidad) {
+            return redirect()->back()->with('error', 'Stock insuficiente');
+        }
+
+        // Registrar la salida (ajusta según tu modelo)
+        $salida = new \App\Models\Salida();
+        $salida->producto_id = $request->producto_id;
+        $salida->cantidad = $request->cantidad;
+        $salida->save();
+
+        // Actualizar el stock en inventario
+        $inventario->stock -= $request->cantidad;
+        $inventario->save();
+
+        return redirect()->back()->with('success', 'Salida registrada correctamente');
     }
 
     /**

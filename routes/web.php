@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\EntradaController;
 use App\Http\Controllers\SalidaController;
+use App\Http\Controllers\NotificacionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,6 +14,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::delete('/notificaciones/{id}', [NotificacionController::class, 'destroy'])->name('notificaciones.destroy');
 
 Route::resource('/products', App\Http\Controllers\ProductController::class);
 Route::resource('/productos', App\Http\Controllers\ProductoController::class);
